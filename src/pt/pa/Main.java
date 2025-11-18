@@ -1,6 +1,6 @@
-package com.brunomnsilva;
+package pt.pa;
 
-import com.brunomnsilva.model.player.MusicPlayer;
+import pt.pa.model.player.MusicPlayer;
 
 import java.util.Scanner;
 

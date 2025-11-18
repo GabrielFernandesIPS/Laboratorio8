@@ -1,7 +1,7 @@
-package com.brunomnsilva.model.player;
+package pt.pa.model.player;
 
-import com.brunomnsilva.model.Playlist;
-import com.brunomnsilva.model.Song;
+import pt.pa.model.Playlist;
+import pt.pa.model.Song;
 
 import javax.media.*;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.brunomnsilva.model.player;
+package pt.pa.model.player;
 
 public abstract class MusicPlayerState {
 
