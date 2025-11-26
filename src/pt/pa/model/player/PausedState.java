@@ -3,17 +3,18 @@ package pt.pa.model.player;
 import javax.media.Player;
 
 public class PausedState extends MusicPlayerState{
-    public PausedState(MusicPlayer player) {super(player);}
+    public PausedState(MusicPlayer player) {
+        super(player);
+        player.pausePlayback();
+    }
 
     @Override
     public void play() {
-        player.startPlayback();
         player.changeState(new PlayingState(player));
     }
 
     @Override
     public void stop() {
-        player.stopPlayback();
         player.changeState(new StoppedState(player));
     }
 
@@ -25,6 +26,16 @@ public class PausedState extends MusicPlayerState{
     @Override
     public void prev() {
         player.rewind10seconds();
+    }
+
+    @Override
+    public void turnOff() {
+        player.changeState(new OffState(player));
+    }
+
+    @Override
+    public void turnOn() {
+
     }
 
     @Override

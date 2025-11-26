@@ -5,19 +5,17 @@ import javax.media.Time;
 public class PlayingState extends MusicPlayerState {
     public PlayingState(MusicPlayer player) {
         super(player);
-
+        player.startPlayback();
     }
 
     @Override
     public void play() {
         //do nothing
-        player.pausePlayback();
         player.changeState(new PausedState(player));
     }
 
     @Override
     public void stop() {
-        player.stopPlayback();
         player.changeState(new StoppedState(player));
     }
 
@@ -29,6 +27,16 @@ public class PlayingState extends MusicPlayerState {
     @Override
     public void prev() {
         player.rewind10seconds();
+    }
+
+    @Override
+    public void turnOff() {
+
+    }
+
+    @Override
+    public void turnOn() {
+
     }
 
     @Override

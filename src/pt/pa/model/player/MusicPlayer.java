@@ -17,7 +17,7 @@ public class MusicPlayer {
         playlist = new Playlist();
         try {
             playlist.readFromFolder(folderPath);
-            state = new StoppedState(this);
+            state = new OffState(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,7 +50,23 @@ public class MusicPlayer {
     public void prev() {
         state.prev();
     }
+    public void turnOff(){
+        state.turnOff();
+    }
 
+    public void turnOn(){
+        state.turnOn();
+    }
+
+    public void turnPlaybackOff(){
+        initPlayer((getPlaylist().iterator().next()));
+        javaMediaPlayer.stop();
+    }
+
+    public void turnPlaybackOn(){
+        if(getPlaylist().iterator().hasNext())
+            initPlayer(getPlaylist().iterator().next());
+    }
     /**
      * Returns a string with the player status.
      * @return the player status

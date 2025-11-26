@@ -4,13 +4,12 @@ public class StoppedState extends MusicPlayerState {
 
     public StoppedState(MusicPlayer player) {
         super(player);
-
+        player.stopPlayback();
     }
 
     @Override
     public void play() {
         player.loadCurrentSong();
-        player.startPlayback();
         player.changeState(new PlayingState(player));
     }
 
@@ -29,6 +28,16 @@ public class StoppedState extends MusicPlayerState {
     public void prev() {
         //load previous song. Keep state.
         player.loadPreviousSong();
+    }
+
+    @Override
+    public void turnOff() {
+        player.changeState(new OffState(player));
+    }
+
+    @Override
+    public void turnOn() {
+
     }
 
     @Override
