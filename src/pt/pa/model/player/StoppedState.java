@@ -4,6 +4,7 @@ public class StoppedState extends MusicPlayerState {
 
     public StoppedState(MusicPlayer player) {
         super(player);
+
     }
 
     @Override

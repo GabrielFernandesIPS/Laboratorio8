@@ -7,13 +7,13 @@ public class PausedState extends MusicPlayerState{
 
     @Override
     public void play() {
-        player.play();
+        player.startPlayback();
         player.changeState(new PlayingState(player));
     }
 
     @Override
     public void stop() {
-        player.stop();
+        player.stopPlayback();
         player.changeState(new StoppedState(player));
     }
 

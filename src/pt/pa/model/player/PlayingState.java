@@ -5,6 +5,7 @@ import javax.media.Time;
 public class PlayingState extends MusicPlayerState {
     public PlayingState(MusicPlayer player) {
         super(player);
+
     }
 
     @Override
